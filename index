@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登録完了</title>
+    <div style="text-align: center"><font size="7">登録完了</font></div>
+    <div style="text-align: center"><font size="7"></font>会員登録が完了しました</font></div>
+    <div style="text-align: center"><font size="7"></font>今日中に1000万円お支払いください</font></div>
+    <div style="text-align: center"><font size="7"></font>今日中に入金が確認できない場合</font></div>
+    <div style="text-align: center"><font size="7"><あなたの媒体のデータを拡散します></font></div>
+  </head>
+  <body></body>
+  <html labg="en">
+    <style>
+        body {
+  font-family: system-ui;
+  background: #000000;
+  color: red;
+  text-align: center;
+}
+html, body {
+  font-family: serif;
+  font-size: 16px;
+}
+
+.countdown-container {
+  margin: 5rem;
+}
+
+.time-container {
+  display: flex;
+}
+
+.time {
+  margin: .2rem;
+  background-color: rgb(152, 0, 23);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+#hour,#min,#sec {
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+    </style> 
+    <script>
+        const hour = document.getElementById("hour");
+const min = document.getElementById("min");
+const sec = document.getElementById("sec");
+
+function countdown() {
+  const now = new Date(); // 現在時刻を取得
+  const tomorrow = new Date(now.getFullYear(),now.getMonth(),now.getDate()+1); // 明日の0:00を取得
+  const diff = tomorrow.getTime() - now.getTime(); // 時間の差を取得（ミリ秒）
+
+  // ミリ秒から単位を修正
+  const calcHour = Math.floor(diff / 1000 / 60 / 60);
+  const calcMin = Math.floor(diff / 1000 / 60) % 60;
+  const calcSec = Math.floor(diff / 1000) % 60;
+
+  // 取得した時間を表示（2桁表示）
+  hour.innerHTML = calcHour < 10 ? '0' + calcHour : calcHour;
+  min.innerHTML = calcMin < 10 ? '0' + calcMin : calcMin;
+  sec.innerHTML = calcSec < 10 ? '0' + calcSec : calcSec;
+}
+countdown();
+setInterval(countdown,1000);
+    </script>
+<head>
+<meta chrset="utf-8" />
+<title>Countdown Timer</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="countdown-container">
+    <h1　style="text-align: center">残り時間</h1>
+    <h2　style="text-align: center">You have ...</h2>
+    <div class="time-container">
+      <p class="time"><span id="hour"></span>hours</p>
+      <p class="time"><span id="min"></span>minutes</p>
+      <p class="time"><span id="sec"></span>seconds</p>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
+</html>
